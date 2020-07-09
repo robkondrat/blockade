@@ -1,11 +1,13 @@
 const SCALE = 20;
 let player;
 let wall;
+let ai;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   player = new Player(15, 15, 0, -1);
   wall = new Wall();
+  ai = new AI();
 }
 
 function draw() {
@@ -15,6 +17,10 @@ function draw() {
 
   player.update();
   player.draw();
+
+  ai.move();
+  ai.update();
+  ai.draw();
 
   wall.draw();
 }
