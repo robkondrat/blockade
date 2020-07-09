@@ -24,6 +24,11 @@ class Player {
     this.body.push(createVector(this.body[this.body.length-1].x + this.xSpeed, this.body[this.body.length-1].y + this.ySpeed));
   }
 
+  setSpeed(x, y) {
+    this.xSpeed = x;
+    this.ySpeed = y;
+  }
+
   draw() {
     for(let i = 0; i < this.body.length; i++) {
       fill(0, 255, 0);
