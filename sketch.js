@@ -1,9 +1,11 @@
 const SCALE = 20;
 let player;
+let wall;
 
 function setup() {
   createCanvas(400, 400);
   player = new Player(15, 15, 0, -1);
+  wall = new Wall();
 }
 
 function draw() {
@@ -13,6 +15,8 @@ function draw() {
 
   player.update();
   player.draw();
+
+  wall.draw();
 }
 
 function keyPressed() {
