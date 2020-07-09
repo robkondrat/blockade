@@ -23,6 +23,23 @@ function draw() {
   ai.draw();
 
   wall.draw();
+
+  checkCollisions();
+}
+
+function checkCollisions() {
+  if (player.hasCollided(ai)) {
+    ai.score++;
+    reset();
+  } else if (ai.hasCollided(player)) {
+    player.score++;
+    reset();
+  }
+}
+
+function reset() {
+  ai.reset();
+  player.reset();
 }
 
 function keyPressed() {
